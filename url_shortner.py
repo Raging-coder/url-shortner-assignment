@@ -1,5 +1,4 @@
 from hashlib import sha256
-import pickle
 import os
 
 def shorten(url:str, shortened_url_dict:dict)-> str:
@@ -55,3 +54,28 @@ def restore(shortened_url, shortened_url_dict):
     
     # TODO: Delete next line
     pass
+
+
+#Do not change the main function
+def main():
+    '''The main function
+    '''
+
+    try:
+        with open('shortened_url_dict.pkl', 'rb') as f:
+            shortened_url_dict = pickle.load(f)
+    except FileNotFoundError as e:
+        shortened_url_dict = {}
+
+    print(shorten("www.google.com", shortened_url_dict))
+    print(shorten("www.msn.com", shortened_url_dict))
+    print(shorten("www.yahoo.com", shortened_url_dict))
+    print(shorten("www.googlemail.com", shortened_url_dict))
+    print(restore("zLg6wl", shortened_url_dict)) #this should return None
+    
+    with open('shortened_url_dict.pkl', 'wb') as f:
+        pickle.dump(shortened_url_dict, f)
+
+
+if __name__ == "__main__":
+    main()

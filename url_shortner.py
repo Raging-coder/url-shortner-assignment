@@ -70,6 +70,8 @@ def main():
     print(shorten("www.google.com", shortened_url_dict))
     print(shorten("www.msn.com", shortened_url_dict))
     print(shorten("www.yahoo.com", shortened_url_dict))
+    #if the user enters same long url multiple times then same short url must be generated
+    print(shorten("www.googlemail.com", shortened_url_dict))
     print(shorten("www.googlemail.com", shortened_url_dict))
     print(restore("zLg6wl", shortened_url_dict)) #this should return None
     

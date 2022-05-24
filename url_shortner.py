@@ -1,10 +1,10 @@
 from hashlib import sha256
+import pickle
 import os
 
 def shorten(url:str, shortened_url_dict:dict)-> str:
     '''A function to hash the url to 6 digit hash. If the url is already in the dictionary, 
     return the next hash.
-
     Args:
         url: the original long url to be shortned (hashed)
         shortened_url_dict: a dictionary containing mapping of long urls to their short urls

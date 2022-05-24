@@ -13,6 +13,8 @@ def shorten(url:str, shortened_url_dict:dict)-> str:
     Returns:
         the hashed shortened url in hexadecimal of length 6
     '''
+    shortened_url = None
+    
     #TODO: if url already in the dictionary, return the shortened url
     
     
